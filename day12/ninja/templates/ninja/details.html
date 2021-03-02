@@ -1,0 +1,11 @@
+<h1>{{dev.name}}</h1>
+<table>
+    <tr><th>Name</th>
+    <th>Level</th></tr>
+    {% for lang in dev.skill_set.all %}
+        <tr>
+            <td>{{lang.name}}</td>
+            <td>{{lang.level}}</td>
+        </tr>
+    {% endfor %}
+</table>
