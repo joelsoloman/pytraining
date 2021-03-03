@@ -1,0 +1,17 @@
+<h1>{{dev.name}}</h1>
+<form action="{% url 'ninja:level' dev.id %}" method="post">
+{% csrf_token %}
+<table>
+    <tr><th>Name</th>
+    <th>Level</th>
+    <th>UpGrade</th></tr>
+    {% for lang in dev.skill_set.all %}
+        <tr>
+            <td>{{lang.name}}</td>
+            <td>{{lang.level}}</td>
+            <td><input type="radio" name="skill" id="skill{{forloop.counter}}" value="{{lang.id}}"></td>
+        </tr>
+    {% endfor %}
+</table>
+<input type="submit" value="Level Up">
+</form>
