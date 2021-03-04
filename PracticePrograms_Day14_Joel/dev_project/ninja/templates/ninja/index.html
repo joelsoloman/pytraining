@@ -1,0 +1,24 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'ninja/style.css' %}">
+
+{% if all_devs %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Experience</th>
+            <th>Country</th>
+        </tr>
+
+        {% for dev in all_devs %}
+        <tr>
+            <td><a href="{% url 'ninja:details' dev.id %}">{{dev.name}}</a></td>
+            <td>{{dev.experience}}</td>
+            <td>{{dev.country}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+{% else %}
+    <h1>No Data in Developers</h1>
+{% endif %}

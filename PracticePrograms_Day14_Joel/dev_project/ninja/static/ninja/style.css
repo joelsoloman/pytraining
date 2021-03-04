@@ -1,0 +1,12 @@
+th  {
+    color: red;
+}
+
+td {
+    color: yellowgreen;
+}
+
+td a{
+    color: yellowgreen;
+    text-decoration: none;
+}
